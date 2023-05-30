@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #000;
+  margin: 0;
+  padding-bottom: 40px; /* Add padding for the sticky caption */
+}
+
+.sticky-caption {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.openbtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+#myVideo1,
+#myVideo2,
+#myVideo3 {
+  width: 100%;
+  cursor: pointer;
+}
+
+#myVideo3 {
+  margin: 0 auto;
+}
+
+.video-controls {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+}
+
+.video-controls button {
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin: 0 5px;
+  font-size: 40px;
+  transition: transform 0.2s;
+}
+
+.video-controls button:hover {
+  transform: scale(1.2);
+}
+
+.play-icon:before {
+  content: "\\25B6";
+}
+
+.pause-icon:before {
+  content: "\\275A\\275A";
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.video-caption,
+.image-caption {
+  position: relative;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.video-caption p,
+.image-caption p {
+  color: #fff;
+  font-size: 16px;
+}
+</style>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index.html">The Great Hall</a>
+  <a href="companions.html">Companions</a>
+  <a href="pastimes.html">Pastimes</a>
+  <a href="quests.html">Completed Quests</a>
+</div>
+
+<div class="video-caption">
+  <p>My boss accidentally broke a bunch of the bottle sauce, so my buddy and I cleaned it up.</p>
+</div>
+
+<video autoplay muted loop id="myVideo1" onclick="togglePlayPause(1)">
+  <source src="videos/nandos.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<div class="video-caption">
+  <p>I manifest my inner Captain America to throw the trash.</p>
+</div>
+
+<video autoplay muted loop id="myVideo2" onclick="togglePlayPause(2)">
+  <source src="videos/trash.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<div class="video-caption">
+  <p>I have always loved the music box, even when I was a kid. Well, lucky me, now I have to clean it.</p>
+</div>
+
+<video autoplay muted loop id="myVideo3" onclick="togglePlayPause(3)">
+  <source src="videos/cabin.mp4" type="video/mp4">
+</video>
+
+<div class="image-caption">
+  <p>They threw me a surprise farewell party when they heard the news that I had to quit.</p>
+</div>
+
+<img src="images/farewell.jpg" alt="Image description">
+
+<div class="image-caption">
+  <p>My boss treated us to some fried chicken.</p>
+</div>
+
+<img src="images/kfc.jpg" alt="Image description">
+
+<div class="image-caption">
+  <p>I know, I thought it was a duck, but my co-worker insists it's a unicorn.</p>
+</div>
+
+<img src="images/unicorn.jpg" alt="Image description">
+
+<div class="image-caption">
+  <p>Serene atmosphere during the closing shift.</p>
+</div>
+
+<img src="images/closing.jpg" alt="Image description">
+
+<div class="image-caption">
+  <p>My most hated task.</p>
+</div>
+
+<img src="images/gtrap.jpg" alt="Image description">
+
+<div class="image-caption">
+  <p>My last day of work as an ice cream scooper.</p>
+</div>
+
+<img src="images/work.jpg" alt="Image description">
+
+<h2>Animated Sidenav Example</h2>
+<p>Click on the element below to open the side navigation menu.</p>
+<span class="openbtn" onclick="openNav()">&#9776;</span>
+
+<div class="video-controls">
+  <button id="playPauseBtn1" class="play-icon" onclick="togglePlayPause(1)"></button>
+  <button id="playPauseBtn2" class="play-icon" onclick="togglePlayPause(2)"></button>
+  <button id="playPauseBtn3" class="play-icon" onclick="togglePlayPause(3)"></button>
+</div>
+
+<div class="sticky-caption">
+  <p>Ah, my time back when I was a young gal. I have completed a few quests. Nothing fancy like yours of course, just bussing tables and scooping ice-creams. But hey, there's no shame in doing humble tasks, eh?</p>
+</div>
+
+<script>
+var videos = [document.getElementById("myVideo1"), document.getElementById("myVideo2"), document.getElementById("myVideo3")];
+var playPauseBtns = [document.getElementById("playPauseBtn1"), document.getElementById("playPauseBtn2"), document.getElementById("playPauseBtn3")];
+
+function togglePlayPause(videoIndex) {
+  var video = videos[videoIndex - 1];
+  var playPauseBtn = playPauseBtns[videoIndex - 1];
+  
+  if (video.paused) {
+    video.play();
+    playPauseBtn.classList.remove("play-icon");
+    playPauseBtn.classList.add("pause-icon");
+  } else {
+    video.pause();
+    playPauseBtn.classList.remove("pause-icon");
+    playPauseBtn.classList.add("play-icon");
+  }
+}
+
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+</body>
+</html>

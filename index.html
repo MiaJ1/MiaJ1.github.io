@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Me</title>
+  <style>
+    body {
+      background-image: url("https://cdnb.artstation.com/p/assets/images/images/026/979/449/large/margarita-dukhovnaya-portfolio4.jpg?1590256052");
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: white;
+      font-family: 'Times New Roman', serif;
+    }
+    body, h1, p, .image-description {
+      text-align: center;
+    }
+    /* Add styles for the navigation bar here */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background-color: transparent;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 10px;
+      transition: background-color 0.2s ease-in-out;
+      border: 5px solid black;
+      background-color: #BF854D;
+      margin: 0 10px;
+    }
+    .navbar a:hover {
+      background-color: transparent;
+      color: yellow;
+    }
+    /* Add styles for the header here */
+    header {
+      border: 15px solid transparent;
+      padding: 10px;
+      text-align: center;
+      background-color: transparent;
+      margin-top: 0; /* Add this line to remove the default margin */
+    }
+    header h2 {
+      font-family: 'Times New Roman', serif;
+      font-size: 30px; /* Adjust the font size as needed */
+      color: white;
+      margin: 0; /* Add this line to remove the default margin */
+    }
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .video-container img {
+      max-width: 300px; /* Adjust the max-width to make the image smaller */
+      border-radius: 50%; /* Add border-radius to make the image round */
+    }
+    .image-description {
+      font-size: 24px; /* Adjust the font size as needed */
+    }
+  </style>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+  float: left;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index.html">The Great Hall</a>
+  <a href="companions.html">Companions</a>
+  <a href="pastimes.html">Pastimes</a>
+  <a href="quests.html">Completed Quests</a>
+</div>
+
+<div id="main">
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+</div>
+
+<header>
+  <h2>The Cozy Camelia's</h2>
+</header>
+<br>
+<h1>Welcome, weary traveler</h1>
+<p>You have stumbled upon my lore. I bid you a warm welcome.</p>
+<br>
+<div class="video-container">
+  <br>
+  <img src="images/me.jpg" alt="Image description">
+  <br>
+  <audio controls autoplay> <!-- Added the autoplay attribute -->
+    <source src="audios/bar.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio>
+  <br>
+  <div class="image-description">
+    Greetings, the name is Mia J Camelia. The owner of this tavern. Can I fix you a drink? While I'm at it, care to listen to my tales?
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "white";
+}
+</script>
+</body>
+</html>

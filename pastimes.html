@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pastimes</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: url('https://1.bp.blogspot.com/-0ioushzgMxY/XTI1bazw0OI/AAAAAAAAKPc/XEAqxLazwoQKOyQjoI8NfGhRkq5O0Po4wCLcBGAs/s1600/0003.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: white;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    .row {
+      margin-left: -5px;
+      margin-right: -5px;
+    }
+
+    .column {
+      float: left;
+      width: 50%;
+      padding: 5px;
+    }
+
+    /* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 100%;
+      border: 1px solid transparent;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 16px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #DA835C;
+      opacity: 0.6;
+      color: black;
+    }
+
+    tr:nth-child(odd) {
+      background-color: transparent;
+      color: white;
+    }
+
+    /* Side Navigation Bar */
+    .sidenav {
+      height: 100%;
+      width: 200px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #333;
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
+
+    .sidenav a {
+      padding: 6px 8px 6px 16px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+    }
+
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+
+    .main {
+      padding: 0px 10px;
+    }
+  </style>
+  <style>
+    body {
+      font-family: "Lato", sans-serif;
+      transition: background-color .5s;
+    }
+
+    .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    #main {
+      transition: margin-left .5s;
+      padding: 16px;
+      float: left;
+    }
+
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    }
+
+    /* Audio Controls */
+    .audio-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .audio-controls button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      margin: 0 10px;
+      outline: none;
+      color: white;
+    }
+
+    .audio-controls button:focus {
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <audio id="myAudio" src="audios/library.mp3"></audio>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">The Great Hall</a>
+    <a href="companions.html">Companions</a>
+    <a href="pastimes.html">Pastimes</a>
+    <a href="quests.html">Completed Quests</a>
+  </div>
+
+  <div id="main">
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+  </div>
+
+  <div class="sidenav">
+  <a href="index.html">The Great Hall</a>
+  <a href="companions.html">Companions</a>
+  <a href="pastimes.html">Pastimes</a>
+  <a href="quests.html">Completed Quests</a>
+  </div>
+
+  <div class="main">
+    <h2>What do I do if I'm not attending to my patrons?</h2>
+    <p1>Well, I escaped through a paper portal. I have my own library, you see. Here are some suggestions, if you're into reading, of course:</p1>
+    <br>
+    <p2>Oh, enjoy the tune I have provided. It is one of the top hits from our local bard.</p2>
+    <div class="row">
+      <div class="column">
+        <table>
+          <tr>
+            <th>Title</th>
+            <th>Authors</th>
+            <th>Genre</th>
+          </tr>
+          <tr>
+            <td>Megatron's Manifesto</td>
+            <td>Megatron</td>
+            <td>Politics</td>
+          </tr>
+          <tr>
+            <td>12 Rules for Life</td>
+            <td>Prof. Jordan Peterson</td>
+            <td>Self-Help</td>
+          </tr>
+          <tr>
+            <td>Last Lecture</td>
+            <td>Prof. Randy Pausch</td>
+            <td>Autobiography</td>
+          </tr>
+        </table>
+      </div>
+      <div class="column">
+        <table>
+          <tr>
+            <th>Title</th>
+            <th>Authors</th>
+            <th>Genre</th>
+          </tr>
+          <tr>
+            <td>Mein Kempf</td>
+            <td>Adolf Hitler</td>
+            <td>Autobiography</td>
+          </tr>
+          <tr>
+            <td>Thrawn</td>
+            <td>Timothy Zahn</td>
+            <td>Sci-Fiction</td>
+          </tr>
+          <tr>
+            <td>The Book Thief</td>
+            <td>Markus Zusak</td>
+            <td>Drama</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="audio-controls">
+    <button id="playButton" onclick="playAudio()">&#9658;</button>
+    <button id="pauseButton" onclick="pauseAudio()" disabled>&#10074;&#10074;</button>
+  </div>
+
+  <script>
+    var audio = document.getElementById("myAudio");
+    var playButton = document.getElementById("playButton");
+    var pauseButton = document.getElementById("pauseButton");
+
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+      document.body.style.backgroundColor = "white";
+    }
+
+    function playAudio() {
+      audio.play();
+      playButton.disabled = true;
+      pauseButton.disabled = false;
+    }
+
+    function pauseAudio() {
+      audio.pause();
+      playButton.disabled = false;
+      pauseButton.disabled = true;
+    }
+  </script>
+</body>
+</html>
